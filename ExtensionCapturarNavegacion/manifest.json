@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "Capturar Eventos",
+	"version": "1.0",
+	"description": "Extension para Capturar los Eventos producidos en el navegador.",
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"notifications",
+		"downloads"
+		
+	],
+	"content_scripts": [
+    	{
+     		"matches": ["<all_urls>"],
+     		"all_frames": true,
+     		"js": ["content.js"]
+    	}
+  	],
+  	"background" : {
+	   "scripts" : ["background.js"]
+	},
+	"icons": {
+	    "16" : "img/desactivate.png",
+		"48" : "img/desactivate.png",
+		"128": "img/desactivate.png"
+		},
+	"browser_action" : {
+		"default_icon" : "img/desactivate.png"
+	}
+}
